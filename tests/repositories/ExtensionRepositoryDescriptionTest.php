@@ -1,6 +1,7 @@
 <?php
 namespace tests\repositories;
 
+use extas\components\repositories\RepositoryDescriptionRepository;
 use extas\interfaces\extensions\IExtensionRepositoryDescription;
 
 use extas\components\extensions\Extension;
@@ -58,15 +59,7 @@ class ExtensionRepositoryDescriptionTest extends TestCase
             Extension::FIELD__METHODS => ['snuffRepo']
         ]));
 
-        $list = new RepositoryDynamic([
-            RepositoryDynamic::FIELD__REPOSITORY_DESCRIPTION => new RepositoryDescription([
-                RepositoryDescription::FIELD__NAME => 'repositories',
-                RepositoryDescription::FIELD__SCOPE => 'extas',
-                RepositoryDescription::FIELD__PRIMARY_KEY => RepositoryDescription::FIELD__ID,
-                RepositoryDescription::FIELD__CLASS => RepositoryDescription::class
-            ])
-        ]);
-
+        $list = new RepositoryDescriptionRepository();
         $list->create(new RepositoryDescription([
             RepositoryDescription::FIELD__NAME => 'snuff_items',
             RepositoryDescription::FIELD__SCOPE => 'extas',
