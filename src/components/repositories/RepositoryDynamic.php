@@ -2,6 +2,7 @@
 namespace extas\components\repositories;
 
 use extas\components\exceptions\MissedOrUnknown;
+use extas\components\repositories\clients\databases\DbCurrent;
 use extas\interfaces\repositories\IRepositoryDescription;
 use extas\interfaces\repositories\IRepositoryDynamic;
 
@@ -33,6 +34,7 @@ class RepositoryDynamic extends Repository implements IRepositoryDynamic
         $this->pk = $rd->getPrimaryKey();
         $this->itemClass = $rd->getClass();
 
+        $this->table = DbCurrent::getTable($this->getName(), $this->getScope());
         $this->table->setPk($this->pk);
         $this->table->setItemClass($this->itemClass);
     }
