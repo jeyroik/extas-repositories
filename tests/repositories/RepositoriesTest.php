@@ -2,7 +2,6 @@
 namespace tests\repositories;
 
 use extas\components\packages\PackageInstallCase;
-use PHPUnit\Framework\TestCase;
 
 /**
  * Class RepositoriesTest
@@ -12,5 +11,4 @@ use PHPUnit\Framework\TestCase;
  */
 class RepositoriesTest extends PackageInstallCase
 {
-
 }
