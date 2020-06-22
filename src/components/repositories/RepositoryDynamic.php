@@ -32,6 +32,9 @@ class RepositoryDynamic extends Repository implements IRepositoryDynamic
         $this->scope = $rd->getScope();
         $this->pk = $rd->getPrimaryKey();
         $this->itemClass = $rd->getClass();
+
+        $this->table->setPk($this->pk);
+        $this->table->setItemClass($this->itemClass);
     }
 
     /**
