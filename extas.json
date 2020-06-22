@@ -24,10 +24,10 @@
   ],
   "extensions": [
     {
-      "class": "extas\\components\\extensions\\ExtensionRepositoryGet",
-      "interface": "extas\\interfaces\\extensions\\IExtensionRepositoryGet",
+      "class": "extas\\components\\extensions\\ExtensionRepositoryDescription",
+      "interface": "extas\\interfaces\\extensions\\IExtensionRepositoryDescription",
       "subject": "*",
-      "methods": []
+      "methods": ["repositoryDescriptionRepository"]
     }
   ]
 }
