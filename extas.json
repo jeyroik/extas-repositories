@@ -3,29 +3,35 @@
   "installer_version": 3,
   "package_classes": [
     {
-      "interface": "",
-      "class": ""
+      "interface": "repositoryDescriptionRepository",
+      "class": "extas\\components\\repositories\\RepositoryDescriptionRepository"
     }
   ],
-  "plugins_install": [
+  "repositories": [
     {
-      "repository": "",
-      "name": "",
-      "section": ""
+      "name": "repositories",
+      "scope": "extas",
+      "pk": "id",
+      "class": "extas\\components\\repositories\\RepositoryDescription",
+      "aliases": ["repositoryDescriptions"]
     }
   ],
   "plugins": [
     {
-      "class": "",
-      "stage": "",
-      "priority": 0,
-      "parameters": {}
+      "class": "extas\\components\\plugins\\init\\InitRepositoriesDescriptions",
+      "stage": "extas.init.section.repositories"
     }
   ],
   "extensions": [
     {
       "class": "extas\\components\\extensions\\ExtensionRepositoryDescription",
       "interface": "extas\\interfaces\\extensions\\IExtensionRepositoryDescription",
+      "subject": "*",
+      "methods": ["repositoryDescriptions"]
+    },
+    {
+      "class": "extas\\components\\extensions\\ExtensionRepositoryGet",
+      "interface": "extas\\interfaces\\extensions\\IExtensionRepositoryGet",
       "subject": "*",
       "methods": ["repositoryDescriptionRepository"]
     }
