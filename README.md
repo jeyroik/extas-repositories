@@ -10,3 +10,50 @@
 # Description
 
 Repositories for extas.
+
+# Using
+
+extas.json
+
+```json
+{
+  "repositories": [
+    {
+      "name": "<repository.name>",
+      "scope": "<repository.scope>",
+      "pk": "<repository.primary_key>",
+      "class": "<repository.item.class>",
+      "aliases": ["<repository.alias>"]
+    }
+  ]
+}
+```
+
+For example:
+
+```json
+{
+  "repositories": [
+    {
+      "name": "plugins",
+      "scope": "extas",
+      "pk": "class",
+      "class": "extas\\components\\plugins\\Plugin",
+      "aliases": ["plugins", "pluginRepository"]
+    }
+  ]
+}
+```
+
+Then somewhere in a code:
+
+```php
+use extas\components\Item;
+class My extends Item
+{
+    // ...
+}
+
+$my = new My();
+$my->plugins()->all([]); 
+``` 
