@@ -1,3 +1,7 @@
+# 0.3.0
+
+- Added plugin for stage `extas.plugin.install.construct`.
+
 # 0.2.0
 
 - Added `getDefaultProperties` method to the `RepositoryDynamic`.
