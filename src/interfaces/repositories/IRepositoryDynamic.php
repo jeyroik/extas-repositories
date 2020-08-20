@@ -15,4 +15,9 @@ interface IRepositoryDynamic extends IRepository
      * @return IRepositoryDescription|null
      */
     public function getRepositoryDescription(): ?IRepositoryDescription;
+
+    /**
+     * @return array
+     */
+    public function getDefaultProperties(): array;
 }

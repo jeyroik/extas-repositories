@@ -46,4 +46,12 @@ class RepositoryDynamic extends Repository implements IRepositoryDynamic
     {
         return $this->config[static::FIELD__REPOSITORY_DESCRIPTION] ?? null;
     }
+
+    /**
+     * @return array
+     */
+    public function getDefaultProperties(): array
+    {
+        return $this->getRepositoryDescription()->__toArray();
+    }
 }

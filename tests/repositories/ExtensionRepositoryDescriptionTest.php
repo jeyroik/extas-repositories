@@ -77,5 +77,16 @@ class ExtensionRepositoryDescriptionTest extends TestCase
         $this->assertNotEmpty($result);
         $this->assertInstanceOf(SnuffItem::class, $result);
         $this->assertEquals('test', $result['id']);
+
+        $this->assertEquals(
+            [
+                'name' => 'snuff_items',
+                'scope' => 'extas',
+                'pk' => 'id',
+                'class' => SnuffItem::class,
+                'aliases' => ['snuffRepo']
+            ],
+            $item->snuffRepo()->getDefaultProperties()
+        );
     }
 }
