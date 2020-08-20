@@ -11,6 +11,12 @@
 
 Repositories for extas.
 
+# Install
+
+`# vendor/bin/extas init`
+
+`# vendor/bin/extas install`
+
 # Using
 
 extas.json
