@@ -1,3 +1,7 @@
+# 0.5.1
+
+- `extas-installer-plugins` dependency removed.
+
 # 0.5.0
 
 - Stage `extas.after.repositories.init` added.
