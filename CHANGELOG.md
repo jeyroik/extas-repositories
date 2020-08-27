@@ -1,11 +1,15 @@
+# 0.4.0
+
+- Plugin for updating repository description extension added. 
+
 # 0.3.0
 
-- Added plugin for stage `extas.plugin.install.construct`.
+- Plugin for stage `extas.plugin.install.construct` added.
 
 # 0.2.0
 
-- Added `getDefaultProperties` method to the `RepositoryDynamic`.
-- Added usage examples.
+- `getDefaultProperties` method to the `RepositoryDynamic` added.
+- Usage examples added.
 
 # 0.1.0
 

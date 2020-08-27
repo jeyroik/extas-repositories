@@ -22,6 +22,10 @@
       "stage": "extas.init.section.repositories"
     },
     {
+      "class": "extas\\components\\plugins\\init\\AfterInitRepositoriesDescriptions",
+      "stage": "extas.after.init"
+    },
+    {
       "class": "extas\\components\\plugins\\construct\\PluginConstructDynamicRepo",
       "stage": "extas.plugin.install.construct",
       "priority": 10

@@ -1,6 +1,7 @@
 <?php
 namespace extas\components\plugins\init;
 
+use extas\components\extensions\ExtensionRepository;
 use extas\components\repositories\RepositoryDescription;
 
 /**
