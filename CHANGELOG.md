@@ -1,3 +1,7 @@
+# 0.5.0
+
+- Stage `extas.after.repositories.init` added.
+
 # 0.4.0
 
 - Plugin for updating repository description extension added. 

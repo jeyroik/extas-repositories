@@ -6,12 +6,15 @@ use extas\components\console\TSnuffConsole;
 use extas\components\extensions\Extension;
 use extas\components\extensions\ExtensionRepositoryDescription;
 use extas\components\plugins\init\AfterInitRepositoriesDescriptions;
+use extas\components\plugins\Plugin;
 use extas\components\repositories\RepositoryDescription;
 use extas\components\repositories\TSnuffRepositoryDynamic;
 use extas\components\THasMagicClass;
 use extas\interfaces\extensions\IExtension;
 use extas\interfaces\IHasIO;
+use extas\interfaces\stages\IStageAfterRepositoriesInit;
 use PHPUnit\Framework\TestCase;
+use tests\repositories\misc\PluginAfterRepositoriesInit;
 
 class PluginAfterInitTest extends TestCase
 {
@@ -50,6 +53,11 @@ class PluginAfterInitTest extends TestCase
             IHasIO::FIELD__OUTPUT => $output
         ]);
 
+        $this->createWithSnuffRepo('pluginRepository', new Plugin([
+            Plugin::FIELD__CLASS => PluginAfterRepositoriesInit::class,
+            Plugin::FIELD__STAGE => IStageAfterRepositoriesInit::NAME
+        ]));
+
         $plugin([]);
         $outputText = $output->fetch();
 
@@ -57,6 +65,12 @@ class PluginAfterInitTest extends TestCase
             'Dynamic repositories installed: ',
             $outputText,
             'Missed welcome message: "' . PHP_EOL . $outputText . '"'
+        );
+
+        $this->assertStringContainsString(
+            'After repositories init',
+            $outputText,
+            'Missed after init message: "' . PHP_EOL . $outputText . '"'
         );
 
         $extension = $this->OneSnuffRepos(
